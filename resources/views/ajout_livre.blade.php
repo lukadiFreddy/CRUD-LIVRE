@@ -12,34 +12,46 @@
 </head>
 
 <body>
-    <div class="d-flex justify-content-center">
-        <h1 class="text-center">AJOUT DE LIVRE</h1>
+    <div class="d-flex justify-content-start">
+        <a href="liste_Livre" class="btn btn-secondary text-white m-2 fw-bold">RETOUR</a>
     </div>
+    <div class="d-flex justify-content-center">
+        <h1 class="text-center fw-bold">AJOUT DE LIVRE</h1>
+    </div>
+    <ol class="m-5">
+        @foreach ($errors->all() as $error)
+            <li class="alert alert-danger fs-0">{{ $error }}</li>
+        @endforeach
+    </ol>
 
     <div class="container border border-dark mt-5 p-5 bg-light">
-        <form class="mt-2">
+        <form action="/ajoutLivre" method="POST" class="mt-2">
+            @csrf
             <div class="row">
                 <div class="col">
                     <label for="auteur" class="form-label text-uppercase fw-bold">Auteur</label>
-                    <input type="text" class="form-control" id="auteur">
+                    <input type="text" class="form-control" id="auteur" name="auteur">
                 </div>
                 <div class="col">
                     <label for="titre" class="form-label text-uppercase fw-bold">Titre</label>
-                    <input type="text" class="form-control" id="titre">
+                    <input type="text" class="form-control" id="titre" name="titre">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col">
                     <label for="prix" class="form-label text-uppercase fw-bold">Prix</label>
-                    <input type="number" class="form-control" id="prix">
+                    <input type="number" class="form-control" id="prix" name="prix">
                 </div>
                 <div class="col">
                     <label for="descript" class="form-label text-uppercase fw-bold">Description</label>
-                    <input type="password" class="form-control" id="descript">
+                    <input type="text" class="form-control" id="descript" name="description">
                 </div>
             </div>
+            <div class="d-flex mt-5">
+                <button type="submit" class="btn btn-success fw-bold">ENVOYER</button>
+                <button type="reset" class="btn btn-danger mx-3 fw-bold "> ANNULER</button>
+            </div>
 
-            <button type="submit" class="btn btn-success mt-5">ENVOYER</button>
         </form>
     </div>
 </body>

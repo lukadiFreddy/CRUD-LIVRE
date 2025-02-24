@@ -22,3 +22,19 @@ h1 {
    color: green;
    transition: all 0.50s ease-in-out;
 }
+
+.upLivre {
+   background-color: white;
+   color: #ffc14e;
+   transition: all 0.50s ease-in-out;
+}
+
+.upLivre:hover {
+   color: white;
+}
+
+.delLivre {
+   background-color: white;
+   color: red;
+   transition: all 0.50s ease-in-out;
+}

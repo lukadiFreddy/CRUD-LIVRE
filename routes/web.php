@@ -14,5 +14,7 @@ use App\Http\Controllers\LivreController;
 |
 */
 
-Route::get('/', [LivreController::class, 'listeLivre']);
+Route::get('/liste_Livre', [LivreController::class, 'listeLivre']);
 Route::get('/ajout_livre', [LivreController::class, 'ajoutLivre']);
+Route::get('/modifierLivre{id}', [LivreController::class, 'updateLivre']);
+Route::post('/ajoutLivre', [LivreController::class, 'ajoutLivreAction']);

@@ -13,13 +13,19 @@
 
 <body>
     <div class="d-flex justify-content-center">
-        <h1 class="text-center">GESTION LIVRE</h1>
+        <h1 class="text-center fw-bold">GESTION LIVRE</h1>
     </div>
     <div class="d-flex justify-content-end m-5">
-        <a href="ajout_livre" class="btn btn-success addLivre">AJOUTER LIVRE</a>
+        <a href="ajout_livre" class="btn btn-success addLivre fw-bold">AJOUTER LIVRE</a>
     </div>
+    <div class="m-5">
+        @if (session('status'))
+            <div class="alert alert-success">{{ session('status') }}</div>
+        @endif
+    </div>
+
     <div class="container text-center">
-        <table class="table table-striped table-hover table-bordered">
+        <table class="table table-striped table-hover">
             <caption>Liste des livres dans la bibliothèque</caption>
             <thead class="table-dark">
                 <tr>
@@ -32,43 +38,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>LUKADI</td>
-                    <td>BASKET</td>
-                    <td>150 $</td>
-                    <td>SPORT</td>
-                    <td>
-                        <a href="" class="btn btn-warning">MODIFIER</a>
-                        <a href="" class="btn btn-danger">SUPPRIMER</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>TSHITENGE</td>
-                    <td>ALPE</td>
-                    <td>75 $</td>
-                    <td>DIVERSITE</td>
-                    <td>
-                        <a href="" class="btn btn-warning">MODIFIER</a>
-                        <a href="" class="btn btn-danger">SUPPRIMER</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>FREDDY</td>
-                    <td>OOTBALL</td>
-                    <td>350 $</td>
-                    <td>SPORT</td>
-                    <td>
-                        <a href="" class="btn btn-warning">MODIFIER</a>
-                        <a href="" class="btn btn-danger">SUPPRIMER</a>
-                    </td>
-                </tr>
+                @foreach ($livres as $livre)
+                    <tr>
+                        <td>{{ $livre->id }}</td>
+                        <td>{{ $livre->auteur }}</td>
+                        <td>{{ $livre->titre }}</td>
+                        <td>{{ $livre->prix }}$</td>
+                        <td>{{ $livre->description }}</td>
+                        <td>
+                            <a href="modifierLivre{{ $livre->id }}" class="btn btn-warning upLivre fw-bold">MODIFIER</a>
+                            <a href="" class="btn btn-danger delLivre fw-bold">SUPPRIMER</a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
-
 </body>
 
 </html>
