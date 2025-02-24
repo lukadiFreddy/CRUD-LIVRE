@@ -1,0 +1,24 @@
+body {
+   margin: 0%;
+   padding: 0%;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+   background-image: url(istockphoto-2060984408-1024x1024.jpg);
+   margin: 1%;
+   padding: 3%;
+   color: white;
+   width: 50%;
+   background-size: cover;
+   background-position: bottom;
+   position: sticky;
+   border: 1px solid white;
+   border-radius: 30px;
+}
+
+.addLivre {
+   background-color: white;
+   color: green;
+   transition: all 0.50s ease-in-out;
+}
