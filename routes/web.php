@@ -14,7 +14,10 @@ use App\Http\Controllers\LivreController;
 |
 */
 
-Route::get('/liste_Livre', [LivreController::class, 'listeLivre']);
+Route::get('/', [LivreController::class, 'listeLivre']);
+Route::get('/liste_Livre', [LivreController::class, 'listeLivre'])->name('liste_article');
 Route::get('/ajout_livre', [LivreController::class, 'ajoutLivre']);
-Route::get('/modifierLivre{id}', [LivreController::class, 'updateLivre']);
+Route::get('/modifier{id}', [LivreController::class, 'updateLivre']);
+Route::post('modifier/traitement', [LivreController::class, 'updateLivreAction']);
 Route::post('/ajoutLivre', [LivreController::class, 'ajoutLivreAction']);
+Route::get('/delete{id}', [LivreController::class, 'deleteLivre']);
