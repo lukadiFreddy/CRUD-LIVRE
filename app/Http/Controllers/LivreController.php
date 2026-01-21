@@ -9,7 +9,7 @@ class LivreController extends Controller
 {
     public function listeLivre()
     {
-        $livres = Livres::paginate(1);
+        $livres = Livres::paginate(5);
         return view('liste_Livre', compact('livres'));
     }
 

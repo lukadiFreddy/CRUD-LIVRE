@@ -38,13 +38,13 @@
             </thead>
             <tbody>
 
-                @php
+                {{-- @php
                     $id = 1;
-                @endphp
+                @endphp --}}
 
                 @foreach ($livres as $livre)
                     <tr>
-                        <td>{{ $id }}</td>
+                        <td>{{$livre->id }}</td>
                         <td>{{ $livre->auteur }}</td>
                         <td>{{ $livre->titre }}</td>
                         <td>{{ $livre->prix }}$</td>
@@ -55,9 +55,9 @@
                         </td>
                     </tr>
 
-                    @php
+                    {{-- @php
                         $id++;
-                    @endphp
+                    @endphp --}}
                 @endforeach
             </tbody>
         </table>
