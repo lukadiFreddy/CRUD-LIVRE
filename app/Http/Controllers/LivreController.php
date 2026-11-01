@@ -41,7 +41,6 @@ class LivreController extends Controller
     public function updateLivre($id)
     {
         $livres = Livres::find($id);
-
         return view('modifier', compact('livres'));
     }
 
